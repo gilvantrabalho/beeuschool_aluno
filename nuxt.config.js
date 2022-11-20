@@ -33,6 +33,7 @@ export default {
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         //'~/assets/css/all.min.css',
+        '~/assets/css/app.css',
         '~/assets/css/sb-admin-2.css'
     ],
 
@@ -45,6 +46,7 @@ export default {
     plugins: [
         { src: '~plugins/vendor/jquery/jquery.min.js', mode: 'client' },
         { src: '~/plugins/vendor/bootstrap/js/bootstrap.bundle.min.js', mode: 'client' },
+        { src: '~/plugins/vue-table-2', mode: 'client' },
         //{ src: '~/plugins/vendor/jquery-easing/jquery.easing.min.js', mode: 'client' },
         //{ src: '~/plugins/js/sb-admin-2.min.js', mode: 'client' },
     ],

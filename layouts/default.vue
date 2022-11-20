@@ -14,11 +14,13 @@
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
-          <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+          <div class="sidebar-brand-text mx-3">
+            <img width="100%" src="../assets/img/logo.png" alt="">
+          </div>
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0" />
+        <!--<hr class="sidebar-divider my-0" />-->
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
@@ -122,7 +124,11 @@
               <NuxtLink class="collapse-item" to="/audio/send-for-teacher">
                 Enviar para o professor
               </NuxtLink>
-              <a class="collapse-item" href="register.html">Meus áudios</a>
+
+              <NuxtLink class="collapse-item" to="/audio/my-audios">
+                Meus áudios
+              </NuxtLink>
+              <!--<a class="collapse-item" href="register.html"></a>-->
               <!--<a class="collapse-item" href="forgot-password.html"
                 >Forgot Password</a
               >
@@ -426,7 +432,7 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas McGee</span
+                    >{{ $auth.user.name }}</span
                   >
                   <img
                     class="img-profile rounded-circle"
@@ -460,6 +466,7 @@
                     href="#"
                     data-toggle="modal"
                     data-target="#logoutModal"
+                    @click="logout"
                   >
                     <i
                       class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
@@ -542,5 +549,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        logout: async function() {
+            await this.$auth.logout(/* .... */)
+            setTimeout(() => {
+                window.location.href = '/auth/login'
+            }, 1000)
+        }
+    }
+};
 </script>
