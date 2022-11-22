@@ -48,8 +48,12 @@
               rows="5"
             ></textarea>
           </div>
-
-          <button class="btn btn-block btn-primary py-2">Enviar Arquivo</button>
+          <ButtonsButtonComponent
+            :loading="loading"
+            title="Enviar Arquivo"
+            type="submit"
+            classStyle="btn-block btn-primary py-2"
+          />
         </form>
       </template>
     </card-container>
@@ -60,11 +64,13 @@
 import TitlePage from "../../components/TitlePage.vue";
 import CardContainer from "../../components/cards/CardContainer.vue";
 import OneHundredTextsApi from "../../api/OneHundredTextsApi";
+import ButtonComponent from "../../components/buttons/ButtonComponent.vue";
 
 export default {
-  components: { TitlePage, CardContainer },
+  components: { TitlePage, CardContainer, ButtonComponent },
   data() {
     return {
+      loading: false,
       texts: [],
       Images: null,
       audio: {
@@ -83,6 +89,7 @@ export default {
     },
     submit() {
       if (this.validated()) {
+        this.loading = true;
         const formData = new FormData();
         formData.append("student_id", this.$auth.user.id);
         formData.append("teacher_id", this.$auth.user.teacher_id);
@@ -107,6 +114,7 @@ export default {
                 message: res.data.message,
               });
             }
+            this.loading = false;
           });
       }
     },

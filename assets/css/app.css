@@ -3,3 +3,7 @@ label {
     font-size: 14px;
     font-weight: 600 !important;
 }
+
+.VueTables__search-field label, .VueTables__limit-field label {
+    display: none !important;
+}
