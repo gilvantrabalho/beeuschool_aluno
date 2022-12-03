@@ -59,7 +59,7 @@ export default {
         },
       },
       data: [],
-    };
+    }
   },
   methods: {
     getAllByUserId: function () {
