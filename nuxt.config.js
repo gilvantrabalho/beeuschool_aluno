@@ -10,7 +10,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'nuxtjs-auth',
+        title: 'BeeUSchool',
         htmlAttrs: {
             lang: 'en'
         },
@@ -47,6 +47,7 @@ export default {
         { src: '~plugins/vendor/jquery/jquery.min.js', mode: 'client' },
         { src: '~/plugins/vendor/bootstrap/js/bootstrap.bundle.min.js', mode: 'client' },
         { src: '~/plugins/vue-table-2', mode: 'client' },
+        { src: '~/plugins/vue-the-mask.js', mode: 'client' },
         //{ src: '~/plugins/vendor/jquery-easing/jquery.easing.min.js', mode: 'client' },
         //{ src: '~/plugins/js/sb-admin-2.min.js', mode: 'client' },
     ],

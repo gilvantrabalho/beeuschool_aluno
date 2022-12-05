@@ -115,7 +115,7 @@
           </a>
           <div
             id="collapsePages"
-            class="collapse show"
+            class="collapse"
             aria-labelledby="headingPages"
             data-parent="#accordionSidebar"
           >
@@ -123,6 +123,45 @@
               <!--<h6 class="collapse-header">Envios de áudio</h6>-->
               <NuxtLink class="collapse-item" to="/audio/send-for-teacher">
                 Enviar para o professor
+              </NuxtLink>
+
+              <NuxtLink class="collapse-item" to="/audio/my-audios">
+                Meus áudios
+              </NuxtLink>
+              <!--<a class="collapse-item" href="register.html"></a>-->
+              <!--<a class="collapse-item" href="forgot-password.html"
+                >Forgot Password</a
+              >
+              <div class="collapse-divider"></div>
+              <h6 class="collapse-header">Other Pages:</h6>
+              <a class="collapse-item active" href="404.html">404 Page</a>
+              <a class="collapse-item" href="blank.html">Blank Page</a>-->
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item active">
+          <a
+            class="nav-link d-flex justify-content-between"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseFinanceiro"
+            aria-expanded="false"
+            aria-controls="collapseFinanceiro"
+          >
+            <span>Financeiro</span>
+            <i class="bi bi-headphones"></i>
+          </a>
+          <div
+            id="collapseFinanceiro"
+            class="collapse show"
+            aria-labelledby="headingPages"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!--<h6 class="collapse-header">Envios de áudio</h6>-->
+              <NuxtLink class="collapse-item" to="/financial/proof_payment">
+                Comprovante pagamento
               </NuxtLink>
 
               <NuxtLink class="collapse-item" to="/audio/my-audios">
