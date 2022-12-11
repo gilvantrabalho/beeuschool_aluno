@@ -48,6 +48,7 @@ export default {
         { src: '~/plugins/vendor/bootstrap/js/bootstrap.bundle.min.js', mode: 'client' },
         { src: '~/plugins/vue-table-2', mode: 'client' },
         { src: '~/plugins/vue-the-mask.js', mode: 'client' },
+        { src: '~/plugins/app.js', mode: 'client' },
         //{ src: '~/plugins/vendor/jquery-easing/jquery.easing.min.js', mode: 'client' },
         //{ src: '~/plugins/js/sb-admin-2.min.js', mode: 'client' },
     ],

@@ -87,14 +87,24 @@
             <div class="bg-white py-2 collapse-inner rounded">
               <!--<h6 class="collapse-header">Envios de áudio</h6>-->
               <NuxtLink class="collapse-item" to="/financial/proof_payment">
-                Comprovante pagamento
+                Enviar comprovante
               </NuxtLink>
 
-              <NuxtLink class="collapse-item" to="/audio/my-audios">
-                Meus áudios
+              <NuxtLink class="collapse-item" to="/financial/my-vouchers">
+                Meus comprovantes
               </NuxtLink>
             </div>
           </div>
+        </li>
+
+        <li class="nav-item active">
+          <NuxtLink
+            class="nav-link d-flex justify-content-between"
+            to="/support"            
+          >
+            <span>Suporte</span>
+            <i class="bi bi-chat-dots"></i>
+          </NuxtLink>          
         </li>
 
         <li class="nav-item active">
@@ -111,7 +121,7 @@
           </a>
           <div
             id="collapseConfig"
-            class="collapse show"
+            class="collapse"
             aria-labelledby="headingPages"
             data-parent="#accordionSidebar"
           >

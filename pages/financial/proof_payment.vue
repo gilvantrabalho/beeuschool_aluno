@@ -6,20 +6,20 @@
       <template v-slot:body>
         <!-- Button trigger modal -->
         <div class="d-flex justify-content-end mb-4">
-          <button type="button" class="btn btn-success shadow py-2">
+          <NuxtLink
+            to="/financial/my-vouchers"
+            type="button"
+            class="btn btn-success shadow py-2"
+          >
             <i class="bi bi-stickies-fill mr-2"></i>
             Ver todos os comprovantes
-          </button>
+          </NuxtLink>
         </div>
-
-        <div class="row">
-          <div
-            v-for="(item, index) in mensalidades"
-            :key="index"
-            class="col-md-6"
-          >
-            <card-comprovante :mensalidade="item" />
-          </div>
+        <div v-if="loading">
+          <spinner />
+        </div>
+        <div v-else>
+          <card-comprovante :mensalidades="mensalidades" />
         </div>
       </template>
     </card-container>
@@ -27,17 +27,25 @@
 </template>
 
 <script>
+import ProofPaymentApi from "../../api/ProofPaymentApi";
 import CardComprovante from "../../components/cards/CardComprovante.vue";
 import CardContainer from "../../components/cards/CardContainer.vue";
 import Modal from "../../components/modal/Modal.vue";
+import Spinner from "../../components/utilities/Spinner.vue";
+
 export default {
   components: {
     CardContainer,
     Modal,
     CardComprovante,
+    Spinner,
+  },
+  created() {
+    this.getVouchersByStudentId();
   },
   data() {
     return {
+      loading: false,
       Images: null,
       mensalidades: [
         {
@@ -114,6 +122,13 @@ export default {
       }
 
       return true;
+    },
+    getVouchersByStudentId: function () {
+      this.loading = true;
+      ProofPaymentApi.getAllByIdStudent(this.$auth.user.id).then((res) => {
+        this.mensalidades = res.data.vouchers;
+        this.loading = false;
+      });
     },
   },
 };

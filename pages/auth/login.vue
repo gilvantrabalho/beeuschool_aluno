@@ -1,6 +1,6 @@
 <template>
   <div class="cont-login">
-    <h4 class="mb-4 mt-3 text-center">Welcome</h4>
+    <h4 class="mb-4 mt-3 text-center">Welcome student</h4>
     <!--<div class="d-flex justify-content-center">
         <img width="200px" src="../../assets/img/logo.png" alt="">
     </div>-->
@@ -25,7 +25,11 @@
       />
 
       <div class="text-center">
-        <button v-if="!loading" type="submit" class="btn btn-dark btn-auth shadow mt-2">
+        <button
+          v-if="!loading"
+          type="submit"
+          class="btn btn-dark btn-auth shadow mt-2"
+        >
           LOGIN
         </button>
         <button v-else type="submit" class="btn btn-dark btn-auth shadow mt-2">
@@ -38,7 +42,7 @@
       </div>
       <div class="mt-3 d-flex justify-content-between">
         <span>Lembre de mim</span>
-        <a href="">Esqueceu a senha?</a>
+        <NuxtLink to="/auth/forgot-password"> Esqueceu a senha? </NuxtLink>
       </div>
     </form>
   </div>
@@ -62,7 +66,7 @@ export default {
   components: { InputComponent, ButtonComponent },
   data() {
     return {
-        loading: false,
+      loading: false,
       user: {
         email: null,
         password: null,
@@ -76,7 +80,7 @@ export default {
     submit: async function () {
       if (this.user.email && this.user.password) {
         try {
-            this.loading = true;
+          this.loading = true;
           let response = await this.$auth.loginWith("local", {
             data: this.user,
           });

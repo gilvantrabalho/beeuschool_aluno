@@ -29,14 +29,14 @@
         <div class="modal-body">
           <slot name="body"></slot>
         </div>
-        <div class="modal-footer">
+        <!--<div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">
             <i class="bi bi-x-circle"></i> Cancelar
           </button>
           <button type="submit" class="btn btn-success">
             <i class="bi bi-send-check-fill mr-1"></i> Enviar
           </button>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

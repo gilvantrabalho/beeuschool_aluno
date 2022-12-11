@@ -3,7 +3,7 @@
     <div class="spinner-grow" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-    <span class="mt-2">Carregado...</span>
+    <span class="mt-2">Carregando...</span>
   </div>
 </template>
 
