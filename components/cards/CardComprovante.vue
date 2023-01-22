@@ -33,7 +33,15 @@
               v-if="item.status == 'Em Aberto'"
               class="d-flex align-items-center"
             >
-              <span class="ball-comprov bg-primary mr-1"></span>
+              <span class="ball-comprov bg-success mr-1"></span>
+              {{ item.status }}
+            </div>
+
+            <div
+              v-if="item.status == 'A Vencer'"
+              class="d-flex align-items-center"
+            >
+              <span class="ball-comprov bg-warning mr-1"></span>
               {{ item.status }}
             </div>
 
@@ -49,7 +57,7 @@
               v-if="item.status == 'Enviado'"
               class="d-flex align-items-center"
             >
-              <span class="ball-comprov bg-warning mr-1"></span>
+              <span class="ball-comprov bg-secondary mr-1"></span>
               {{ item.status }}
             </div>
           </div>
@@ -59,7 +67,30 @@
             v-if="item.status == 'Em Aberto'"
             class="
               btn-enviar-comprov
-              bg-primary
+              bg-success
+              rounded
+              shadow
+              ml-2
+              p-4
+              text-white
+              d-flex
+              align-items-center
+            "
+            data-toggle="modal"
+            data-target="#modalEnviarComprovante"
+          >
+            <div class="d-flex flex-column align-items-center">
+              <span>ADIANTAR</span>
+              <span>PARCELA</span>
+            </div>
+          </div>
+
+          <div
+            @click="showSelected(item)"
+            v-if="item.status == 'A Vencer'"
+            class="
+              btn-enviar-comprov
+              bg-warning
               rounded
               shadow
               ml-2
@@ -99,7 +130,7 @@
             v-if="item.status == 'Enviado'"
             class="
               btn-enviar-comprov
-              bg-warning
+              bg-secondary
               rounded
               shadow
               ml-2
@@ -121,7 +152,12 @@
       subtitle="Envie seu comprovante para aprovação."
     >
       <template v-slot:body>
-        <div v-if="itemSelected.status == 'Em Aberto'">
+        <div
+          v-if="
+            itemSelected.status == 'A Vencer' ||
+            itemSelected.status == 'Em Aberto'
+          "
+        >
           <form
             ref="formAudio"
             @submit.prevent="submit"

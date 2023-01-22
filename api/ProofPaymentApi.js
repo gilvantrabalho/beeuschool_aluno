@@ -9,5 +9,8 @@ export default {
     },
     getByGrid: async function() {
         return await api.get('voucher/read-by-grid');
+    },
+    configVoucher: async function(id) {
+        return await api.get(`voucher/config-voucher/${id}`);
     }
 };

@@ -4,43 +4,47 @@
 
     <card-container title="Alterar minha senha">
       <template v-slot:body>
-        <form @submit.prevent="submit" method="POST">
-          <div class="form-group">
-            <label for="">Senha atual: </label>
-            <input
-              v-model="change_password.password"
-              type="password"
-              class="form-control py-4"
-              placeholder="****"
-            />
-          </div>
+        <div class="row">
+          <div class="col-md-8 mx-auto pb-4">
+            <form @submit.prevent="submit" method="POST">
+              <div class="form-group">
+                <label for="">Senha atual: </label>
+                <input
+                  v-model="change_password.password"
+                  type="password"
+                  class="form-control py-4"
+                  placeholder="****"
+                />
+              </div>
 
-          <div class="form-group">
-            <label for="">Nova senha: </label>
-            <input
-              v-model="change_password.new_password"
-              type="password"
-              class="form-control py-4"
-              placeholder="****"
-            />
-          </div>
+              <div class="form-group">
+                <label for="">Nova senha: </label>
+                <input
+                  v-model="change_password.new_password"
+                  type="password"
+                  class="form-control py-4"
+                  placeholder="****"
+                />
+              </div>
 
-          <div class="form-group">
-            <label for="">Confirmar senha: </label>
-            <input
-              v-model="change_password.c_passsword"
-              type="password"
-              class="form-control py-4"
-              placeholder="****"
-            />
-          </div>
+              <div class="form-group">
+                <label for="">Confirmar senha: </label>
+                <input
+                  v-model="change_password.c_passsword"
+                  type="password"
+                  class="form-control py-4"
+                  placeholder="****"
+                />
+              </div>
 
-          <button-component
-            title="ALTERAR SENHA"
-            type="submit"
-            classStyle="btn-primary btn-block py-3"
-          />
-        </form>
+              <button-component
+                title="ALTERAR SENHA"
+                type="submit"
+                classStyle="btn-primary btn-block py-3"
+              />
+            </form>
+          </div>
+        </div>
       </template>
     </card-container>
   </div>

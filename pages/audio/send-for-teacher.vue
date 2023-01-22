@@ -4,57 +4,62 @@
 
     <card-container title="Enviar novo áudio">
       <template v-slot:body>
-        <form
-          ref="formAudio"
-          @submit.prevent="submit"
-          enctype="multipart/form-data"
-          class="pb-4"
-          method="post"
-        >
-          <div class="form-group">
-            <label for="" class="form-label"
-              >Texto de referência: <span class="text-danger">*</span></label
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <form
+              ref="formAudio"
+              @submit.prevent="submit"
+              enctype="multipart/form-data"
+              class="pb-4"
+              method="post"
             >
-            <!--<input v-model="audio.title" type="text" class="form-control" />-->
+              <div class="form-group">
+                <label for="" class="form-label"
+                  >Texto de referência:
+                  <span class="text-danger">*</span></label
+                >
+                <!--<input v-model="audio.title" type="text" class="form-control" />-->
 
-            <select v-model="audio.text_ref_id" class="form-control">
-              <option selected value="">Selecione</option>
-              <option
-                v-for="(item, index) in texts"
-                :key="index"
-                :value="item.id"
-              >
-                {{ item.name }}
-              </option>
-            </select>
+                <select v-model="audio.text_ref_id" class="form-control">
+                  <option selected value="">Selecione</option>
+                  <option
+                    v-for="(item, index) in texts"
+                    :key="index"
+                    :value="item.id"
+                  >
+                    {{ item.name }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="" class="form-label"
+                  >Arquivo: <span class="text-danger">*</span></label
+                >
+                <br />
+
+                <input type="file" @change="uploadFile" ref="file" />
+              </div>
+
+              <div class="form-group">
+                <label for="">Descrição: (opcional)</label>
+                <textarea
+                  v-model="audio.description"
+                  class="form-control"
+                  id=""
+                  cols="30"
+                  rows="5"
+                ></textarea>
+              </div>
+              <ButtonsButtonComponent
+                :loading="loading"
+                title="Enviar Arquivo"
+                type="submit"
+                classStyle="btn-block btn-primary py-2"
+              />
+            </form>
           </div>
-
-          <div class="form-group">
-            <label for="" class="form-label"
-              >Arquivo: <span class="text-danger">*</span></label
-            >
-            <br />
-
-            <input type="file" @change="uploadFile" ref="file" />
-          </div>
-
-          <div class="form-group">
-            <label for="">Descrição: (opcional)</label>
-            <textarea
-              v-model="audio.description"
-              class="form-control"
-              id=""
-              cols="30"
-              rows="5"
-            ></textarea>
-          </div>
-          <ButtonsButtonComponent
-            :loading="loading"
-            title="Enviar Arquivo"
-            type="submit"
-            classStyle="btn-block btn-primary py-2"
-          />
-        </form>
+        </div>
       </template>
     </card-container>
   </div>

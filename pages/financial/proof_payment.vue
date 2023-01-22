@@ -116,7 +116,7 @@ export default {
       if (!this.Images) {
         this.$notify.error({
           title: "Ops",
-          message: "Selecione um áudio para envio!",
+          message: "Selecione o comprovante para envio!",
         });
         return false;
       }
