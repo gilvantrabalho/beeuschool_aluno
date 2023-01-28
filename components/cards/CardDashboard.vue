@@ -8,7 +8,15 @@
           >
             {{ title }}
           </div>
-          <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+          <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <!---->
+            <div v-if="!loading">
+              {{ data }}
+            </div>
+            <div v-else class="spinner-border spinner-border-sm" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
         <div class="col-auto">
           <i
@@ -24,6 +32,6 @@
 <script>
 export default {
   name: "card-dashboard",
-  props: ["title", "color"],
+  props: ["title", "color", "data", "loading"],
 };
 </script>

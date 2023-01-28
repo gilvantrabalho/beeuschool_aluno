@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label v-if="label" :for="for_id" class="form-label">{{ label }} </label>
+    <label v-if="label" :for="for_id" class="form-label">{{ label }} <span v-if="require" class="text-danger">*</span></label>
     <input
       :id="for_id"
       v-model="model"
@@ -29,15 +29,15 @@
 }
 
 .form-input:focus {
-    box-shadow: none !important;
-    /*border: none !important;*/
-    /*background-color: rebeccapurple;*/
+  box-shadow: none !important;
+  /*border: none !important;*/
+  /*background-color: rebeccapurple;*/
 }
 </style>
 
 <script>
 export default {
-  props: ["for_id", "label", "type", "placeholder"],
+  props: ["for_id", "label", "type", "placeholder", "require"],
 
   computed: {
     model: {

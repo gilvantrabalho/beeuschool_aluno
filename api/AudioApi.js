@@ -7,5 +7,8 @@ export default {
 
     showStudentsAudioId: async function (id) {
         return await api.get(`students/audio/get-show-student-audio-id/${id}`);
+    },
+    countAudios: async function (id) {
+        return await api.get(`students/audio/countAudios/${id}`);
     }
 };

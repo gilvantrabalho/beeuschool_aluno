@@ -1,6 +1,6 @@
 <template>
   <div class="cont-login">
-    <h4 class="mb-4 mt-3 text-center">Welcome student</h4>
+    <h4 class="mb-4 mt-3 text-center">Hi, student!</h4>
     <!--<div class="d-flex justify-content-center">
         <img width="200px" src="../../assets/img/logo.png" alt="">
     </div>-->

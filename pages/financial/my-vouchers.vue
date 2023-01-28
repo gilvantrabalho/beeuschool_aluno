@@ -4,15 +4,6 @@
     <card-container title="Todos meus comprovantes">
       <template v-slot:body>
         <v-client-table :columns="columns" :data="data" :options="options">
-          <!--<template slot="actions" slot-scope="{ row }">
-            <div class="d-flex justify-content-center">
-              <NuxtLink :to="`/audio/my-audio/${row.id}`">
-                <button class="btn btn-sm btn-outline-dark shadow">
-                  <i class="bi bi-eye-fill"></i>
-                </button>
-              </NuxtLink>
-            </div>
-          </template>-->
           <template slot="due_date" slot-scope="{ row }">
             {{ formatDate(row.due_date) }}
           </template>

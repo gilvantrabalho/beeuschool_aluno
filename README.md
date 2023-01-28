@@ -71,3 +71,6 @@ More information about the usage of this directory in [the documentation](https:
 
 -> VueTable2
 https://matanya.gitbook.io/vue-tables-2/client-table
+
+-> Pegar favicon de site
+https://www.google.com/s2/favicons?domain=www.site.com.br
